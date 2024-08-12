@@ -2,14 +2,21 @@
 <Shell
     x:Class="MauiApp.Renderers.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:pages="clr-namespace:MauiApp.Renderers.Pages"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp.Renderers"
     Shell.FlyoutBehavior="Disabled"
-    Title="MauiApp.Renderers">
+    Shell.NavBarIsVisible="False">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:OnePage}" />
+        </Tab>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:TwoPage}" />
+        </Tab>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:ThreePage}" />
+        </Tab>
+    </TabBar>
 </Shell>
